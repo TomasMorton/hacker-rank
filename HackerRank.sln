@@ -8,8 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementation", "Implementation", "{38069838-4E7E-4559-88DA-191D5AE9C10C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SockMerchant", "SockMerchant", "{738B37C5-77F3-4B3E-84CA-F7C0935F737D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{7DE9BF6E-3E1A-43F2-9779-5ACD96691113}"
+ProjectSection(SolutionItems) = preProject
+	Algorithms\Implementation\SockMerchant\sock-merchant-English.pdf = Algorithms\Implementation\SockMerchant\sock-merchant-English.pdf
+EndProjectSection
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SockMerchant.Tests", "Algorithms\Implementation\SockMerchant\SockMerchant.Tests\SockMerchant.Tests.fsproj", "{95F5A776-7F7A-43A9-A49A-82205FAAEE7A}"
 EndProject
@@ -36,7 +37,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{38069838-4E7E-4559-88DA-191D5AE9C10C} = {7B07A632-E04C-411C-B71B-FE2D34075115}
 		{738B37C5-77F3-4B3E-84CA-F7C0935F737D} = {38069838-4E7E-4559-88DA-191D5AE9C10C}
-		{7DE9BF6E-3E1A-43F2-9779-5ACD96691113} = {738B37C5-77F3-4B3E-84CA-F7C0935F737D}
 		{6FA936C1-8A21-4BE0-84ED-207C2B82D947} = {738B37C5-77F3-4B3E-84CA-F7C0935F737D}
 		{95F5A776-7F7A-43A9-A49A-82205FAAEE7A} = {738B37C5-77F3-4B3E-84CA-F7C0935F737D}
 	EndGlobalSection

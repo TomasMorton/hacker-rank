@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Compile Include="CountPairsShould.fs" />
+    <Compile Include="TestCases.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
@@ -19,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Utilities\TestCases\TestCases.fsproj" />
     <ProjectReference Include="..\SockMerchant\SockMerchant.fsproj" />
   </ItemGroup>
 

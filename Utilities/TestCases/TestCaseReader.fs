@@ -38,14 +38,10 @@ module TestCaseReader =
         let private removeFilePrefix (file:string) =
             file.Replace("input", "").Replace("output", "")
         
-        let private removeFileSuffix (file:string) =
-            file.Replace(".txt", "")
-        
         let private getTestIndex file =
             file
             |> getFileName
             |> removeFilePrefix
-            |> removeFileSuffix
             |> int
         
         let private getIndexedFile (file: string * string[]) =

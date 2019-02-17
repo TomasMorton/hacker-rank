@@ -40,7 +40,7 @@ let ``Have one pair when the socks are the same color`` () =
     
     let numberOfPairs = SockCounter.countPairs socks
     
-    Assert.Equal(0, numberOfPairs)
+    Assert.Equal(1, numberOfPairs)
     
 [<Fact>]
 let ``Have two pairs when there are 4 socks of the same color`` () =
@@ -48,4 +48,4 @@ let ``Have two pairs when there are 4 socks of the same color`` () =
     
     let numberOfPairs = SockCounter.countPairs socks
     
-    Assert.Equal(0, numberOfPairs)
+    Assert.Equal(2, numberOfPairs)

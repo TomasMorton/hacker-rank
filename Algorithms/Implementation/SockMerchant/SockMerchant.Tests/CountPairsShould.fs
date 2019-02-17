@@ -7,7 +7,7 @@ type TestColor = Red = 1 | Blue = 2
 
 let createSock (color: TestColor) =
     let colorNumber = int color
-    SockCounter.Color colorNumber
+    { SockCounter.Sock.Color = colorNumber }
     
     
 [<Fact>]

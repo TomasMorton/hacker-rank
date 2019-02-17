@@ -1,7 +1,7 @@
 namespace SockMerchant
 
 module SockCounter =
-    type Sock = Color of int
+    type Sock = { Color : int }
 
     let private groupSocksByColor socks =
         socks

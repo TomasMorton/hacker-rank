@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>TestCaseReader</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="TestCaseFinder.fs" />
+    <Compile Include="TestCaseReader.fs" />
+  </ItemGroup>
+
+</Project>

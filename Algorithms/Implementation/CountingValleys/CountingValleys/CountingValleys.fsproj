@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Typography.fs" />
+    <Compile Include="Hike.fs" />
     <Compile Include="ValleyCounter.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>

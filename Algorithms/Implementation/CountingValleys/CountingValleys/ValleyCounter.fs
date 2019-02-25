@@ -1,6 +1,18 @@
 namespace CountingValleys
 
 module ValleyCounter =
+    open Topography
 
-    let countValleys input =
-        0
+    let private isValley topography = topography.Terrain = Terrain.Valley
+    
+    let private isNewTerrain topography =
+        match (topography.Elevation) with
+        | Elevation -1 | Elevation 0 | Elevation 1 -> true
+        | _ -> false
+        
+    let countValleys hike =
+        let topography = Region.createFromHike hike
+        
+        topography.Areas
+        |> Seq.filter isValley
+        |> Seq.length

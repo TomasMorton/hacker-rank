@@ -17,14 +17,14 @@ let createElevationChange inclineLength declineLength =
 let createMountain elevation =
     let (incline, decline) = createElevationChange elevation elevation
     
-    incline
-    |> Seq.append decline
+    decline
+    |> Seq.append incline
 
 let createValley depth =
     let (incline, decline) = createElevationChange depth depth
     
-    decline
-    |> Seq.append incline
+    incline
+    |> Seq.append decline
 
 [<Fact>]
 let ``Have no valleys when the Hike is empty``() =
@@ -36,7 +36,7 @@ let ``Have no valleys when the Hike is empty``() =
 
 [<Fact>]
 let ``Have no valleys when the Hike is only a mountain``() =
-    let mountainHike = createHike <| createMountain 1
+    let mountainHike = createMountain 1 |> createHike
     
     let numberOfValleys = ValleyCounter.countValleys mountainHike
     
@@ -44,8 +44,32 @@ let ``Have no valleys when the Hike is only a mountain``() =
 
 [<Fact>]
 let ``Have one valley when the Hike is only a valley``() =
-    let valleyHike = createHike <| createValley 1
+    let valleyHike = createValley 1 |> createHike
     
     let numberOfValleys = ValleyCounter.countValleys valleyHike
     
     Assert.Equal(1, numberOfValleys)
+    
+[<Fact>]
+let ``Have one valley when the Hike is two valleys that don't return to sea level``() =
+    let steps = [ ElevationChange.Decline; ElevationChange.Decline;
+                  ElevationChange.Incline;
+                  ElevationChange.Decline;
+                  ElevationChange.Incline; ElevationChange.Incline ]
+    let valleyHike = steps |> createHike
+    
+    let numberOfValleys = ValleyCounter.countValleys valleyHike
+    
+    Assert.Equal(1, numberOfValleys)
+    
+[<Fact>]
+let ``Have two valleys when the Hike is valley - mountain - valley``() =
+    let steps =
+        createValley 1
+        |> Seq.append <| createMountain 1
+        |> Seq.append <| createValley 1
+    let hike = steps |> createHike
+    
+    let numberOfValleys = ValleyCounter.countValleys hike
+    
+    Assert.Equal(2, numberOfValleys)

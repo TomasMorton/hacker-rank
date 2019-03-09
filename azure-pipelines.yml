@@ -1,5 +1,12 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 
+pr:
+  - master
+
+trigger:
+  - master
+
 steps:
   - script: ./fake.sh build
+  

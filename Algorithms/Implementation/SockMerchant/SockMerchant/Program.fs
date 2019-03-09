@@ -9,7 +9,7 @@ let main args =
                 |> Array.map int
 
     input
-    |> Array.map (function color -> { SockCounter.Sock.Color = color })
+    |> Array.map (fun color -> { SockCounter.Sock.Color = color })
     |> SockCounter.countPairs
     |> printf "%d"
 

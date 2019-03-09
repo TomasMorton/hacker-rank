@@ -16,7 +16,7 @@ module TestCaseFinder =
         
     let private findTestCaseFolder challengeFolder =
         Directory.GetDirectories challengeFolder
-        |> Seq.find (function directory -> directory.Contains("testcases"))
+        |> Seq.find (fun directory -> directory.Contains("testcases"))
 
     let findTestCases challengeName =
         let currentDirectory = Environment.CurrentDirectory

@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
@@ -21,9 +21,18 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TestCases", "Utilities\TestCases\TestCases.fsproj", "{938E92BB-1F83-4261-AAAC-871A8A26E696}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{B140B156-696D-4F57-9619-7F8CBCF80BFF}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CountingValleys", "CountingValleys", "{F05A1145-DFF3-4656-A0DE-59058512ABA0}"
 ProjectSection(SolutionItems) = preProject
-	README.md = README.md
+	Algorithms\Implementation\CountingValleys\counting-valleys-English.pdf = Algorithms\Implementation\CountingValleys\counting-valleys-English.pdf
 EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CountingValleys", "Algorithms\Implementation\CountingValleys\CountingValleys\CountingValleys.fsproj", "{A125EB69-744D-4628-B41C-8BDAECC59E25}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CountingValleys.Tests", "Algorithms\Implementation\CountingValleys\CountingValleys.Tests\CountingValleys.Tests.fsproj", "{786912EB-6B5E-4A3E-AD15-881C0957CAB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +55,14 @@ Global
 		{938E92BB-1F83-4261-AAAC-871A8A26E696}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{938E92BB-1F83-4261-AAAC-871A8A26E696}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{938E92BB-1F83-4261-AAAC-871A8A26E696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A125EB69-744D-4628-B41C-8BDAECC59E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A125EB69-744D-4628-B41C-8BDAECC59E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A125EB69-744D-4628-B41C-8BDAECC59E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A125EB69-744D-4628-B41C-8BDAECC59E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{786912EB-6B5E-4A3E-AD15-881C0957CAB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{786912EB-6B5E-4A3E-AD15-881C0957CAB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{786912EB-6B5E-4A3E-AD15-881C0957CAB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{786912EB-6B5E-4A3E-AD15-881C0957CAB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{38069838-4E7E-4559-88DA-191D5AE9C10C} = {7B07A632-E04C-411C-B71B-FE2D34075115}
@@ -53,5 +70,8 @@ Global
 		{6FA936C1-8A21-4BE0-84ED-207C2B82D947} = {738B37C5-77F3-4B3E-84CA-F7C0935F737D}
 		{95F5A776-7F7A-43A9-A49A-82205FAAEE7A} = {738B37C5-77F3-4B3E-84CA-F7C0935F737D}
 		{938E92BB-1F83-4261-AAAC-871A8A26E696} = {C7004C92-2CDA-4E91-B54A-40146054388E}
+		{F05A1145-DFF3-4656-A0DE-59058512ABA0} = {38069838-4E7E-4559-88DA-191D5AE9C10C}
+		{A125EB69-744D-4628-B41C-8BDAECC59E25} = {F05A1145-DFF3-4656-A0DE-59058512ABA0}
+		{786912EB-6B5E-4A3E-AD15-881C0957CAB9} = {F05A1145-DFF3-4656-A0DE-59058512ABA0}
 	EndGlobalSection
 EndGlobal

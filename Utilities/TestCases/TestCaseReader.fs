@@ -3,20 +3,22 @@
 open System.IO
 
 module TestCaseReader =
-    type TestCase = { Input : string []; ExpectedOutput : string [] }
+    type TestCase = { Input : string list; ExpectedOutput : string list }
    
     //Test Case Files are in either the input or output folder of the Challenge
     module private FileFinder =
         
         let private readFile directory =
             File.ReadAllLines directory
+            |> List.ofArray
         
         let private getAllFilesInDirectory directory =
             Directory.GetFiles(directory)
+            |> List.ofArray
         
         let private readAllFilesInDirectory directory =
             getAllFilesInDirectory directory
-            |> Seq.map (function file -> (file, readFile file))
+            |> List.map (function file -> (file, readFile file))
     
         let getTestInputs testCaseLocation =
             let directory = "input"
@@ -44,14 +46,14 @@ module TestCaseReader =
             |> removeFilePrefix
             |> int
         
-        let private getIndexedFile (file: string * string[]) =
+        let private getIndexedFile (file: string * string list) =
             let index = getTestIndex <| fst file
             let fileContents = snd file
             (index, fileContents)
         
         let private getFileMap files =
             files
-            |> Seq.map getIndexedFile
+            |> List.map getIndexedFile
             |> Map.ofSeq
                             
         let mapInputsToOutputs inputFiles outputFiles =
@@ -59,8 +61,8 @@ module TestCaseReader =
             let findInput index = inputMap.[index]
                 
             outputFiles
-            |> Seq.map getIndexedFile
-            |> Seq.map (function indexedOutput -> { Input = findInput (fst indexedOutput); ExpectedOutput = snd indexedOutput })
+            |> List.map getIndexedFile
+            |> List.map (function indexedOutput -> { Input = findInput (fst indexedOutput); ExpectedOutput = snd indexedOutput })
     
     let readTestCases testCaseLocation =
         let input = FileFinder.getTestInputs testCaseLocation

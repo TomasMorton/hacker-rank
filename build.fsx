@@ -12,19 +12,20 @@ open Fake.Core.TargetOperators
 
 module Solution =
     let path = "HackerRank.sln"
-    
+
 module Build =
     let configuration = DotNet.BuildConfiguration.Release
 
 Target.create "Clean" (fun _ ->
     !! "**/bin"
     ++ "**/obj"
-    |> Shell.cleanDirs 
+    |> Shell.cleanDirs
 )
 
 Target.create "Restore" (fun _ ->
     DotNet.restore id Solution.path
 )
+
 Target.create "Build" (fun _ ->
     let configureBuild (buildOptions : DotNet.BuildOptions) =
         { buildOptions with
@@ -33,14 +34,15 @@ Target.create "Build" (fun _ ->
         }
     DotNet.build configureBuild Solution.path
 )
+
 Target.create "Test" (fun _ ->
-    let configureTest (testOptions: DotNet.TestOptions) =
+    let configureTest (testOptions : DotNet.TestOptions) =
         { testOptions with
             Configuration = Build.configuration
             NoRestore = true
             NoBuild = true
         }
-    
+
     !! "**/*Tests.fsproj"
     |> Seq.iter (DotNet.test configureTest)
 )

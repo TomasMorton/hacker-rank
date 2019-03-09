@@ -23,5 +23,20 @@
     <ProjectReference Include="..\..\..\..\Utilities\TestCases\TestCases.fsproj" />
     <ProjectReference Include="..\JumpingOnTheClouds\JumpingOnTheClouds.fsproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="jumping-on-the-clouds-testcases\input\input00.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="jumping-on-the-clouds-testcases\input\input01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="jumping-on-the-clouds-testcases\output\output00.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="jumping-on-the-clouds-testcases\output\output01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   
 </Project>

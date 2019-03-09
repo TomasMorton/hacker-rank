@@ -36,7 +36,7 @@ let executeTestCase mappedTestCase =
 
 [<Fact>]
 let ``Pass all test cases``() =
-    let testCaseLocation = TestCaseFinder.findTestCases "JumpingOnTheClouds"
-    TestCaseReader.readTestCases "/Users/tomas/Documents/Development/hacker-rank/Algorithms/Implementation/JumpingOnTheClouds/jumping-on-the-clouds-testcases"
+    let testCaseLocation = TestCaseFinder.findTestCases ()
+    TestCaseReader.readTestCases testCaseLocation
     |> List.map mapTestCase
     |> List.iter executeTestCase

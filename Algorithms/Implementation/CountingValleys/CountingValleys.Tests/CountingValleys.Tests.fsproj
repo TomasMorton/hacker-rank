@@ -24,4 +24,19 @@
     <ProjectReference Include="..\CountingValleys\CountingValleys.fsproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="counting-valleys-testcases\input\input00.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="counting-valleys-testcases\input\input01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="counting-valleys-testcases\output\output00.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="counting-valleys-testcases\output\output01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

@@ -3,7 +3,7 @@ namespace JumpingOnTheClouds
 module CloudJumper =
     type Cloud = | Ordinary | Thunder
     type Path = { Clouds : Cloud list }
-    
+
     let createPath clouds =
         { Clouds = clouds }
 
@@ -20,7 +20,7 @@ module CloudJumper =
         let takeSmallJump followingCloud remainingClouds =
             let followingAndRemainingClouds = followingCloud :: remainingClouds.Clouds |> createPath
             1 + jumpToEnd followingAndRemainingClouds
-                
+
         let takeNextJump nextCloud followingCloud remainingClouds =
             let canMakeDoubleJump = canJump followingCloud
             match canMakeDoubleJump with
@@ -38,6 +38,6 @@ module CloudJumper =
             match path.Clouds with
             | [] -> path
             | currentPosition :: remainingPath -> createPath remainingPath
-            
+
         jumpToEnd pathWithoutCurrentPosition
 

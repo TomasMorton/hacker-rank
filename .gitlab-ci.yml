@@ -4,5 +4,5 @@ run_fake:
   script: ./fake.sh build
   only:
     refs:
-      - pull
+      - /^pull.*$/
       - master

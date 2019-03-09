@@ -2,3 +2,6 @@ image: microsoft/dotnet:latest
 
 run_fake:
   script: ./fake.sh build
+  only:
+    - merge_requests
+    - master

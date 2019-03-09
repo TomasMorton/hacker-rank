@@ -25,6 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		build.fsx = build.fsx
 		.gitignore = .gitignore
 		.gitattributes = .gitattributes
+		azure-pipelines.yml = azure-pipelines.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CountingValleys", "CountingValleys", "{F05A1145-DFF3-4656-A0DE-59058512ABA0}"

@@ -24,7 +24,7 @@ let executeTestCase mappedTestCase =
         
 [<Fact>]
 let ``Pass all test cases``() =
-    let testCaseLocation = TestCaseFinder.findTestCases "SockMerchant"
-    TestCaseReader.readTestCases "/Users/tomas/Documents/Development/hacker-rank/Algorithms/Implementation/SockMerchant/sock-merchant-testcases"
+    let testCaseLocation = TestCaseFinder.findTestCases ()
+    TestCaseReader.readTestCases testCaseLocation
     |> Seq.map mapTestCase
     |> Seq.iter executeTestCase

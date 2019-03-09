@@ -9,10 +9,8 @@ trigger:
 
 steps:
   - script: ./fake.sh build
-  
-task: PublishTestResults
-  condition: succeededOrFailed()
-  inputs:
-    testRunner: xUnit
-    testResultsFiles: '**/*.trx'
- 
+  - task: PublishTestResults
+    condition: succeededOrFailed()
+    inputs:
+      testRunner: xUnit
+      testResultsFiles: '**/*.trx'

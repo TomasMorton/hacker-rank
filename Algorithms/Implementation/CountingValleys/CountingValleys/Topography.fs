@@ -53,12 +53,18 @@ module TopographyBuilder =
         match builder.Areas with
         | [] -> [ Topography.plain ]
         | _ -> builder.Areas
+        
+    let getCurrentAndRemainingAreas builder =
+        let areas = getAreas builder
+        match areas with
+        | (previousTopography :: remainingAreas) -> (previousTopography, remainingAreas)
+        | [] -> (Topography.plain, [])
     
     let private addNewArea builder newTopography =
         newTopography :: builder.Areas
         
     let private updateExistingArea builder newTopography =
-        let (previousTopography :: remainingAreas) = getAreas builder
+        let (previousTopography, remainingAreas) = getCurrentAndRemainingAreas builder
         let largestTerrain = Topography.getLargestTopography previousTopography newTopography
         
         largestTerrain :: remainingAreas

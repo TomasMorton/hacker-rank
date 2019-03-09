@@ -41,7 +41,7 @@ Target.create "Test" (fun _ ->
             Configuration = Build.configuration
             NoRestore = true
             NoBuild = true
-            Logger = Some "console;verbosity=normal"
+            Logger = Some "trx"
         }
 
     !! "**/*Tests.fsproj"

@@ -1,4 +1,4 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
@@ -29,13 +29,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CountingValleys", "CountingValleys", "{F05A1145-DFF3-4656-A0DE-59058512ABA0}"
-ProjectSection(SolutionItems) = preProject
-	Algorithms\Implementation\CountingValleys\counting-valleys-English.pdf = Algorithms\Implementation\CountingValleys\counting-valleys-English.pdf
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		Algorithms\Implementation\CountingValleys\counting-valleys-English.pdf = Algorithms\Implementation\CountingValleys\counting-valleys-English.pdf
+	EndProjectSection
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CountingValleys", "Algorithms\Implementation\CountingValleys\CountingValleys\CountingValleys.fsproj", "{A125EB69-744D-4628-B41C-8BDAECC59E25}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CountingValleys.Tests", "Algorithms\Implementation\CountingValleys\CountingValleys.Tests\CountingValleys.Tests.fsproj", "{786912EB-6B5E-4A3E-AD15-881C0957CAB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JumpingOnTheClouds", "JumpingOnTheClouds", "{6B29C761-415B-4D68-B0B4-F1731D81F3C6}"
+    ProjectSection(SolutionItems) = preProject
+        Algorithms\Implementation\JumpingOnTheClouds\jumping-on-the-clouds-English.pdf = Algorithms\Implementation\JumpingOnTheClouds\jumping-on-the-clouds-English.pdf
+    EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "JumpingOnTheClouds", "Algorithms\Implementation\JumpingOnTheClouds\JumpingOnTheClouds\JumpingOnTheClouds.fsproj", "{C78E3BCC-1F8C-4956-967B-1729ACC66803}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "JumpingOnTheClouds.Tests", "Algorithms\Implementation\JumpingOnTheClouds\JumpingOnTheClouds.Tests\JumpingOnTheClouds.Tests.fsproj", "{38D692FD-7734-440A-8989-29C08BFE5143}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +75,14 @@ Global
 		{786912EB-6B5E-4A3E-AD15-881C0957CAB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{786912EB-6B5E-4A3E-AD15-881C0957CAB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{786912EB-6B5E-4A3E-AD15-881C0957CAB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C78E3BCC-1F8C-4956-967B-1729ACC66803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78E3BCC-1F8C-4956-967B-1729ACC66803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78E3BCC-1F8C-4956-967B-1729ACC66803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78E3BCC-1F8C-4956-967B-1729ACC66803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38D692FD-7734-440A-8989-29C08BFE5143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D692FD-7734-440A-8989-29C08BFE5143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D692FD-7734-440A-8989-29C08BFE5143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D692FD-7734-440A-8989-29C08BFE5143}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{38069838-4E7E-4559-88DA-191D5AE9C10C} = {7B07A632-E04C-411C-B71B-FE2D34075115}
@@ -76,5 +93,8 @@ Global
 		{F05A1145-DFF3-4656-A0DE-59058512ABA0} = {38069838-4E7E-4559-88DA-191D5AE9C10C}
 		{A125EB69-744D-4628-B41C-8BDAECC59E25} = {F05A1145-DFF3-4656-A0DE-59058512ABA0}
 		{786912EB-6B5E-4A3E-AD15-881C0957CAB9} = {F05A1145-DFF3-4656-A0DE-59058512ABA0}
+		{6B29C761-415B-4D68-B0B4-F1731D81F3C6} = {38069838-4E7E-4559-88DA-191D5AE9C10C}
+		{C78E3BCC-1F8C-4956-967B-1729ACC66803} = {6B29C761-415B-4D68-B0B4-F1731D81F3C6}
+		{38D692FD-7734-440A-8989-29C08BFE5143} = {6B29C761-415B-4D68-B0B4-F1731D81F3C6}
 	EndGlobalSection
 EndGlobal

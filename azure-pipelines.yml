@@ -9,7 +9,7 @@ trigger:
 
 steps:
   - script: ./fake.sh build
-  - task: PublishTestResults
+  - task: PublishTestResults@2
     condition: succeededOrFailed()
     inputs:
       testRunner: xUnit

@@ -9,7 +9,7 @@ type SockMerchantTestCase = { Socks : seq<SockMerchant.SockCounter.Sock>; Expect
 let mapTestCase (testCase : TestCaseReader.TestCase) =
     let socks =
         testCase.Input.[1].Trim().Split([|' '|])
-        |> Seq.map (function color -> { SockCounter.Sock.Color = int color })
+        |> Seq.map (fun color -> { SockCounter.Sock.Color = int color })
         
     let numberOfPairs = testCase.ExpectedOutput.[0] |> int     
     { Socks = socks; ExpectedNumberOfPairs = numberOfPairs }

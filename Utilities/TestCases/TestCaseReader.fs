@@ -18,7 +18,7 @@ module TestCaseReader =
         
         let private readAllFilesInDirectory directory =
             getAllFilesInDirectory directory
-            |> List.map (function file -> (file, readFile file))
+            |> List.map (fun file -> (file, readFile file))
     
         let getTestInputs testCaseLocation =
             let directory = "input"
@@ -62,7 +62,7 @@ module TestCaseReader =
                 
             outputFiles
             |> List.map getIndexedFile
-            |> List.map (function indexedOutput -> { Input = findInput (fst indexedOutput); ExpectedOutput = snd indexedOutput })
+            |> List.map (fun indexedOutput -> { Input = findInput (fst indexedOutput); ExpectedOutput = snd indexedOutput })
     
     let readTestCases testCaseLocation =
         let input = FileFinder.getTestInputs testCaseLocation

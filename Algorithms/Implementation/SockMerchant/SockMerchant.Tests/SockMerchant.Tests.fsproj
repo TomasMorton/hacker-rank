@@ -24,4 +24,19 @@
     <ProjectReference Include="..\SockMerchant\SockMerchant.fsproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="sock-merchant-testcases\input\input00.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sock-merchant-testcases\input\input08.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sock-merchant-testcases\output\output00.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sock-merchant-testcases\output\output08.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

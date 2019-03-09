@@ -9,6 +9,7 @@
     <Compile Include="Hike.fs" />
     <Compile Include="Topography.fs" />
     <Compile Include="ValleyCounter.fs" />
+    <Compile Include="HikeReader.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

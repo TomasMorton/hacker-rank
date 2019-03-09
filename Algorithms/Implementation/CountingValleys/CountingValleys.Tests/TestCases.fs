@@ -7,31 +7,14 @@ open TestCases.TestCaseReader
 
 type CountingValleysTestCase = { Hike: Hike.Hike; ExpectedNumberOfValleys : int }
 
-let mapDirection directionCharacter =
-    match directionCharacter with
-    | 'U' -> Some Hike.ElevationChange.Incline
-    | 'D' -> Some Hike.ElevationChange.Decline
-    | _ -> None
-
 let readDirections (testCase : TestCase) =
     testCase.Input.[1].Trim()
     |> List.ofSeq
-    |> List.map mapDirection
-    
-let createHike directions =
-    match directions with
-    | x when List.contains None x -> None
-    | directions ->
-        directions
-        |> List.map Option.get
-        |> List.map Hike.createStep
-        |> Hike.createHike
-        |> Some
             
 let mapTestCase (testCase : TestCaseReader.TestCase) =
     let hike =
         readDirections testCase
-        |> createHike
+        |> HikeReader.createHike
             
     let numberOfValleys = testCase.ExpectedOutput.[0] |> int
     

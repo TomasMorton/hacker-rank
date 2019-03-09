@@ -12,5 +12,5 @@ steps:
   - task: PublishTestResults@2
     condition: succeededOrFailed()
     inputs:
-      testRunner: xUnit
+      testRunner: VSTest
       testResultsFiles: '**/*.trx'

@@ -4,7 +4,7 @@ module Hike =
 
     type ElevationChange = Incline | Decline
     type Step = { Direction : ElevationChange }
-    type Hike = { Steps : seq<Step> }
+    type Hike = { Steps : Step list }
 
     let createStep direction =
         { Direction = direction }

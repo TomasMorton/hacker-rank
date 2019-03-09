@@ -97,6 +97,6 @@ module Region =
         let builder = { Areas = [ plain ]; CurrentElevation = plainElevation }
         
         hike.Steps
-        |> Seq.map (fun step -> step.Direction)
-        |> Seq.fold (fun builder elevationChange ->
+        |> List.map (fun step -> step.Direction)
+        |> List.fold (fun builder elevationChange ->
             withElevationChange builder elevationChange) builder

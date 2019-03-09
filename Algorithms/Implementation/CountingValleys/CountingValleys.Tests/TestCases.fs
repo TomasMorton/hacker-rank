@@ -15,15 +15,16 @@ let mapDirection directionCharacter =
 
 let readDirections (testCase : TestCase) =
     testCase.Input.[1].Trim()
-    |> Seq.map mapDirection
+    |> List.ofSeq
+    |> List.map mapDirection
     
 let createHike directions =
     match directions with
-    | x when Seq.contains None x -> None
+    | x when List.contains None x -> None
     | directions ->
         directions
-        |> Seq.map Option.get
-        |> Seq.map Hike.createStep
+        |> List.map Option.get
+        |> List.map Hike.createStep
         |> Hike.createHike
         |> Some
             
@@ -53,5 +54,5 @@ let executeTestCase mappedTestCase =
 let ``Pass all test cases``() =
     let testCaseLocation = TestCaseFinder.findTestCases "CountingValleys"
     TestCaseReader.readTestCases "/Users/tomas/Documents/Development/hacker-rank/Algorithms/Implementation/CountingValleys/counting-valleys-testcases"
-    |> Seq.map mapTestCase
-    |> Seq.iter executeTestCase
+    |> List.map mapTestCase
+    |> List.iter executeTestCase

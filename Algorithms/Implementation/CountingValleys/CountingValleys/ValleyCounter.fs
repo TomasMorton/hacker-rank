@@ -14,5 +14,5 @@ module ValleyCounter =
         let topography = Region.createFromHike hike
         
         topography.Areas
-        |> Seq.filter isValley
-        |> Seq.length
+        |> List.filter isValley
+        |> List.length

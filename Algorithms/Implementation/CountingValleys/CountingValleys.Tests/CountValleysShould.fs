@@ -6,29 +6,29 @@ open CountingValleys.Hike
 
 let createHike elevationChanges =
     elevationChanges
-    |> Seq.map Hike.createStep
+    |> List.map Hike.createStep
     |> Hike.createHike
 
 let createElevationChange inclineLength declineLength =
-    let incline = Seq.replicate inclineLength ElevationChange.Incline
-    let decline = Seq.replicate declineLength ElevationChange.Decline
+    let incline = List.replicate inclineLength ElevationChange.Incline
+    let decline = List.replicate declineLength ElevationChange.Decline
     (incline, decline)
 
 let createMountain elevation =
     let (incline, decline) = createElevationChange elevation elevation
     
     decline
-    |> Seq.append incline
+    |> List.append incline
 
 let createValley depth =
     let (incline, decline) = createElevationChange depth depth
     
     incline
-    |> Seq.append decline
+    |> List.append decline
 
 [<Fact>]
 let ``Have no valleys when the Hike is empty``() =
-    let emptyHike = createHike [|  |]
+    let emptyHike = createHike [ ]
     
     let numberOfValleys = ValleyCounter.countValleys emptyHike
     
@@ -66,8 +66,8 @@ let ``Have one valley when the Hike is two valleys that don't return to sea leve
 let ``Have two valleys when the Hike is valley - mountain - valley``() =
     let steps =
         createValley 1
-        |> Seq.append <| createMountain 1
-        |> Seq.append <| createValley 1
+        |> List.append <| createMountain 1
+        |> List.append <| createValley 1
     let hike = steps |> createHike
     
     let numberOfValleys = ValleyCounter.countValleys hike

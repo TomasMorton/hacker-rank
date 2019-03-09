@@ -1,2 +1,4 @@
+image: microsoft/dotnet:latest
+
 run_fake:
-  script: ./fake.sh build  
+  script: ./fake.sh build

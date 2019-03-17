@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="RepeatedWord.fs" />
+    <Compile Include="CharacterCounter.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

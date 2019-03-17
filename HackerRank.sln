@@ -47,6 +47,9 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "JumpingOnTheClouds.Tests", "Algorithms\Implementation\JumpingOnTheClouds\JumpingOnTheClouds.Tests\JumpingOnTheClouds.Tests.fsproj", "{38D692FD-7734-440A-8989-29C08BFE5143}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RepeatedString", "RepeatedString", "{7F4E7C1C-1FF1-4533-A981-903034288844}"
+ProjectSection(SolutionItems) = preProject
+	Algorithms\Implementation\RepeatedString\repeated-string-English.pdf = Algorithms\Implementation\RepeatedString\repeated-string-English.pdf
+EndProjectSection
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RepeatedString", "Algorithms\Implementation\RepeatedString\RepeatedString\RepeatedString.fsproj", "{2AD88FD0-B938-49AB-9A2D-97384490803D}"
 EndProject

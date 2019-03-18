@@ -3,10 +3,10 @@ namespace RepeatedString
 module RepeatedWord =
     type RepeatedWord = { Word : string; Repetitions : int }
 
-    let repititionsAbove0 repititions =
+    let private repititionsAbove0 repititions =
         repititions > 0
 
-    let isValid repeatedWord =
+    let private isValid repeatedWord =
         repititionsAbove0 repeatedWord.Repetitions
 
     let create repetitions word =

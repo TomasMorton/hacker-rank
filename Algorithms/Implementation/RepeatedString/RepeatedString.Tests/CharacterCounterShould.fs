@@ -9,6 +9,9 @@ let characterToCount = 'a'
 let countCharacter =
     CharacterCounter.countInstances characterToCount
 
+let countCharacterWithinLimit limit =
+    CharacterCounter.countInstancesWithinLimit characterToCount limit
+
 let getWordWithoutCharacter () =
     "abcdefghijklmnopqrstuvwxyz"
     |> Seq.filter (fun c -> c <> characterToCount)
@@ -57,3 +60,12 @@ let ``Return 2 when word contains character and is repeated once`` () =
         |> createRepeatedWord 2
     let count = countCharacter word
     Assert.Equal(2, count)
+    
+[<Fact>]
+let ``Return 0 when limit is 0`` () =
+    let limit = 0
+    let word =
+        getWordWithCharacter ()
+        |> createRepeatedWord 2
+    let count = countCharacterWithinLimit limit word
+    Assert.Equal(0, count)

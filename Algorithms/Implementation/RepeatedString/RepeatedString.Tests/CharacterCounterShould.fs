@@ -69,3 +69,12 @@ let ``Return 0 when limit is 0`` () =
         |> createRepeatedWord 2
     let count = countCharacterWithinLimit limit word
     Assert.Equal(0, count)
+    
+[<Fact>]
+let ``Return 2 when word contains the character twice`` () =
+    let word =
+        sprintf "%c!%c" characterToCount characterToCount
+        |> createRepeatedWord 1
+    let count = countCharacter word
+    Assert.Equal(2, count)
+        

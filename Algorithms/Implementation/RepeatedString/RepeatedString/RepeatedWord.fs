@@ -1,16 +1,13 @@
 namespace RepeatedString
 
 module RepeatedWord =
-    type RepeatedWord = { Word : string; Repetitions : int64 }
-
-    let private repetitionsAbove0 repetitions =
-        repetitions > 0L
+    type RepeatedWord = { Word : string; }
 
     let private isValid repeatedWord =
-        repetitionsAbove0 repeatedWord.Repetitions
+        String.length repeatedWord.Word > 0
 
-    let create repetitions word =
-        let repeatedWord = { Word = word; Repetitions = repetitions }
+    let create word =
+        let repeatedWord = { Word = word; }
         let valid = isValid repeatedWord
         match valid with
         | true -> Some repeatedWord

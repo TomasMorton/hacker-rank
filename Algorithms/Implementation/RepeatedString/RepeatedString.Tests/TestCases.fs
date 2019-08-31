@@ -5,17 +5,16 @@ open RepeatedString
 open RepeatedWord
 open TestCases
 
-type RepeatedStringTestCase = { Word : RepeatedWord; CharacterToCount : char; ExpectedCount : int64 }
+type RepeatedStringTestCase = { Word : RepeatedWord; Limit: int64; CharacterToCount : char; ExpectedCount : int64 }
 
 let mapTestCase characterToCount (testCase : TestCaseReader.TestCase) =
-    let word = testCase.Input.[0]
-    let repetitions = testCase.Input.[1] |> int64
-    let repeatedWord = RepeatedWord.create repetitions word
+    let word = testCase.Input.[0] |> RepeatedWord.create
+    let limit = testCase.Input.[1] |> int64
     
     let expectedCount = testCase.ExpectedOutput.[0] |> int64
-    repeatedWord
+    word
     |> Option.map (fun w ->
-        { Word = w; CharacterToCount = characterToCount; ExpectedCount = expectedCount })
+        { Word = w; Limit = limit; CharacterToCount = characterToCount; ExpectedCount = expectedCount })
     
 let executeTestCase mappedTestCase =
     printfn "Executing test case"
@@ -25,9 +24,9 @@ let executeTestCase mappedTestCase =
     let repeatedWord = testCase.Word
     
     printfn "Expected character count: %d" testCase.ExpectedCount
-    printfn "Word: %s (%d times)" repeatedWord.Word repeatedWord.Repetitions
+    printfn "Word: %s (Length of %d)" repeatedWord.Word testCase.Limit
     
-    let characterCount = CharacterCounter.countInstances testCase.CharacterToCount testCase.Word
+    let characterCount = CharacterCounter.countInstancesWithinLimit testCase.CharacterToCount testCase.Limit testCase.Word
     Assert.Equal(testCase.ExpectedCount, characterCount)
         
 [<Fact>]

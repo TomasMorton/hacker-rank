@@ -1,21 +1,31 @@
 namespace RepeatedString
 
 module CharacterCounter =
-    open System
     open RepeatedWord
 
     let private countCharacter expectedChar actualChar =
         let isSame = expectedChar = actualChar
         if isSame then 1 else 0
 
-    let private wordAsStringWithLimit limit repeatedWord =
-        Seq.replicate repeatedWord.Repetitions repeatedWord.Word
-        |> Seq.truncate limit
-        |> String.concat ""
-        
-    let countInstancesWithinLimit character limit repeatedWord =
-        wordAsStringWithLimit limit repeatedWord
+    let countCharacterInWord character word =
+        word
         |> Seq.sumBy (countCharacter character)
+    
+    let private wordAsStringWithLimit character limit repeatedWord =
+        let countPerWord =
+            repeatedWord.Word
+            |> countCharacterInWord character
+            
+        let numberOfCompleteWords = limit / int64 repeatedWord.Word.Length
+        let sumOfCompleteWords = numberOfCompleteWords * int64 countPerWord
         
-    let countInstances character repeatedWord =
-        countInstancesWithinLimit character Int32.MaxValue repeatedWord
+        let remainder = limit % int64 repeatedWord.Word.Length |> int
+        let sumOfRemainder =
+            repeatedWord.Word
+            |> Seq.take remainder
+            |> countCharacterInWord character
+        
+        sumOfCompleteWords + int64 sumOfRemainder
+        
+    let countInstancesWithinLimit character (limit : int64) repeatedWord =
+        wordAsStringWithLimit character limit repeatedWord

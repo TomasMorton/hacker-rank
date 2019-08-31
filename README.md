@@ -1,5 +1,5 @@
 # hacker-rank
-[![Build Status](https://tmorton.visualstudio.com/hacker-rank/_apis/build/status/hacker-rank-CI?branchName=master)](https://tmorton.visualstudio.com/hacker-rank/_build/latest?definitionId=1&branchName=master)\
+[![Build Status](https://dev.azure.com/TomasMorton/hacker-rank/_apis/build/status/hacker-rank-CI?branchName=master)](https://dev.azure.com/TomasMorton/hacker-rank/_build/latest?definitionId=1&branchName=master)
 This repository contains my solutions to coding challenges from HackerRank.
 
 ## Challenges

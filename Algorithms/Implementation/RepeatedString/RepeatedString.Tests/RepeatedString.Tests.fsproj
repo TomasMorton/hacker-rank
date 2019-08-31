@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Compile Include="CharacterCounterShould.fs" />
+    <Compile Include="TestCases.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

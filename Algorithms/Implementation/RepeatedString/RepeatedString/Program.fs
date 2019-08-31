@@ -1,8 +1,18 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open System
+﻿open System
+open RepeatedString
 
 [<EntryPoint>]
 let main argv =
-    printfn "Hello World from F#!"
-    0 // return an integer exit code
+    let characterToCount = 'a'
+    let word = Console.ReadLine()
+    let repetitions = Console.ReadLine() |> int64
+    
+    let repeatedWord = RepeatedWord.create repetitions word
+    match repeatedWord with
+    | None -> failwithf "Unable to parse input: %s %d" word repetitions
+    | Some word ->
+        word
+        |> CharacterCounter.countInstances characterToCount
+        |> printf "%d"
+
+    0

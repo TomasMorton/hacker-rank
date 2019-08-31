@@ -76,5 +76,12 @@ let ``Return 2 when word contains the character twice`` () =
         sprintf "%c!%c" characterToCount characterToCount
         |> createRepeatedWord 1
     let count = countCharacter word
-    Assert.Equal(2, count)
-        
+    Assert.Equal(2L, count)
+  
+[<Fact>]
+let ``Handle very large repetitions`` () =
+    let word =
+        sprintf "%c" characterToCount
+        |> createRepeatedWord Int64.MaxValue
+    let count = countCharacter word
+    Assert.Equal(Int64.MaxValue, count)
